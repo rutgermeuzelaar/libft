@@ -6,7 +6,7 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/31 21:47:16 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/02 12:24:15 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/06/02 18:40:11 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,13 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = (*lst);
+	if (*lst == NULL)
+	{
+		*lst = new;
+	}
+	else
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/02 09:24:18 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/02 12:23:37 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/06/02 18:41:04 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (i < size)
 	{
 		next_node = current_node->next;
-		del(current_node);
+		ft_lstdelone(current_node, del);
 		current_node = next_node;
 		i++;
 	}
-	lst = NULL;
+	*lst = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/02 10:23:59 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/02 12:23:28 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/06/02 18:41:15 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	i = 0;
 	while (i < size)
 	{
-		f(lst);
+		f(lst->content);
 		lst = lst->next;
+		i++;
 	}
 }
