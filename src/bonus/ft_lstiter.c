@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstdelone.c                                     :+:    :+:            */
+/*   ft_lstiter.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/06/01 00:46:26 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/02 12:24:09 by rmeuzela      ########   odam.nl         */
+/*   Created: 2024/06/02 10:23:59 by rmeuzela      #+#    #+#                 */
+/*   Updated: 2024/06/02 12:23:28 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	del(lst);
+	const int	size = ft_lstsize(lst);
+	int			i;
+
+	i = 0;
+	while (i < size)
+	{
+		f(lst);
+		lst = lst->next;
+	}
 }

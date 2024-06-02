@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 BUILDDIR = build
 OBJDIR = build/src
 SRCDIR = src/src
@@ -16,7 +16,7 @@ TO_LINK = $(OBJECTS)
 OBJDIR_BONUS = build/bonus
 SRCDIR_BONUS = src/bonus
 SOURCE_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-ft_lstdelone.c
+ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_lstadd_back.c
 OBJECTS_BONUS = $(SOURCE_BONUS:%.c=$(OBJDIR_BONUS)/%.o)
 NAME_BONUS = libft.a
 
