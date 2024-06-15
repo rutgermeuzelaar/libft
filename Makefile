@@ -18,12 +18,21 @@ SOURCE_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_lstadd_back.c
 OBJECTS_BONUS = $(SOURCE_BONUS:%.c=$(OBJDIR_BONUS)/%.o)
 
+GET_NEXT_LINE = $(wildcard get_next_line/build/src_shared/*.o) \
+$(wildcard get_next_line/build/src_bonus/*.o)
+FT_PRINTF = $(wildcard ft_printf/build/*.o)
+LIB = $(GET_NEXT_LINE) $(FT_PRINTF)
+
 .PHONY: all clean fclean re bonus
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	ar -rcs $(NAME) $(OBJECTS)
+$(LIB):
+	$(MAKE) bonus -C get_next_line/
+	$(MAKE) -C ft_printf/
+
+$(NAME): $(LIB) $(OBJECTS)
+	ar -rcs $(NAME) $(OBJECTS) $(LIB)
 
 $(OBJECTS): $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
@@ -48,6 +57,10 @@ re: fclean all
 clean:
 	rm -f $(OBJECTS)
 	rm -f $(OBJECTS_BONUS)
+	$(MAKE) clean -C ft_printf/
+	$(MAKE) clean -C get_next_line/
 
 fclean: clean
 	rm -f $(NAME)
+	$(MAKE) fclean -C ft_printf/
+	$(MAKE) fclean -C get_next_line/
