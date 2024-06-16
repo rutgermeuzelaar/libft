@@ -14,9 +14,9 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
-# include "../include/linked_list.h"
-# include "../ft_printf/include/ft_printf.h"
-# include "../get_next_line/include/get_next_line.h"
+# include "../apps/libft/include/linked_list.h"
+# include "../apps/ft_printf/include/ft_printf.h"
+# include "../apps/get_next_line/include/get_next_line.h"
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
