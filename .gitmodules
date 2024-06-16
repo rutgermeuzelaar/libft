@@ -1,6 +1,6 @@
 [submodule "get_next_line"]
-	path = get_next_line
+	path = apps/get_next_line
 	url = https://github.com/rutgermeuzelaar/get_next_line.git
 [submodule "ft_printf"]
-	path = ft_printf
+	path = apps/ft_printf
 	url = https://github.com/rutgermeuzelaar/ft_printf.git
