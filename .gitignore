@@ -3,3 +3,4 @@
 *.out
 .vscode
 main.c
+illegal Makefile copy.mk
