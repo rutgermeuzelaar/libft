@@ -7,9 +7,6 @@ NAME := libft.a
 
 all: lib
 
-tell:
-	$(foreach app, $(APPS), $(MAKE) tell -C $(app);)
-
 lib:
 	$(foreach app, $(APPS), $(MAKE) -C $(app);)
 

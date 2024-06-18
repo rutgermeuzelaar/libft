@@ -1,7 +1,7 @@
 #!/bin/bash
 
 argc=$#
-libft=libft.a
+libft=../../libft.a
 contents=$(ar -t $libft)
 all_found=1
 for arg in "$@"

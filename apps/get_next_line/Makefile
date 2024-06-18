@@ -4,4 +4,3 @@ SOURCES_BONUS := get_next_line_bonus.c
 override SHARED_DEFINITION := true
 
 include ../../common.mk
-
