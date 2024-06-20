@@ -6,7 +6,7 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/27 15:14:15 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/16 20:43:59 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/06/20 17:49:12 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,26 +56,27 @@ static int	get_total_substrings(char *s, char delimiter)
 	return (substring_total);
 }
 
-static char	**create_arr_of_ptrs(char *s, char c)
+static char	**create_arr_of_ptrs(const int size)
 {
-	char	**arr_of_ptrs;
-	int		substrings_total;
+	char		**arr_of_ptrs;
 
-	substrings_total = get_total_substrings((char *)s, c);
-	arr_of_ptrs = ft_calloc(substrings_total + 1, sizeof(char *));
+	arr_of_ptrs = NULL;
+	if (size == 0)
+	{
+		return (NULL);
+	}
+	arr_of_ptrs = ft_calloc(size + 1, sizeof(char *));
 	if (arr_of_ptrs == 0)
-		return (0);
+		return (NULL);
 	return (arr_of_ptrs);
 }
 
-static void	free_arr_of_ptrs(char **arr_of_ptrs, char *s, char c)
+static void	free_arr_of_ptrs(char **arr_of_ptrs, const int size)
 {
 	int	i;
-	int	substrings_total;
 
 	i = 0;
-	substrings_total = get_total_substrings(s, c);
-	while (i < substrings_total)
+	while (i < size)
 	{
 		free(arr_of_ptrs[i]);
 		i++;
@@ -85,17 +86,18 @@ static void	free_arr_of_ptrs(char **arr_of_ptrs, char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		j;
-	int		substring_len;
-	char	**arr_of_ptrs;
+	const int	total_substrings = get_total_substrings((char *)s, c);
+	int			i;
+	int			j;
+	int			substring_len;
+	char		**arr_of_ptrs;
 
 	i = 0;
 	j = -1;
-	arr_of_ptrs = create_arr_of_ptrs((char *)s, c);
+	arr_of_ptrs = create_arr_of_ptrs(total_substrings);
 	if (arr_of_ptrs == 0)
-		return (0);
-	while (++j < get_total_substrings((char *)s, c))
+		return (NULL);
+	while (++j < total_substrings)
 	{
 		while (s[i] == c)
 			i++;
@@ -103,8 +105,8 @@ char	**ft_split(char const *s, char c)
 		arr_of_ptrs[j] = ft_substr(s, i, substring_len);
 		if (arr_of_ptrs[j] == 0)
 		{
-			free_arr_of_ptrs(arr_of_ptrs, (char *)s, c);
-			return (0);
+			free_arr_of_ptrs(arr_of_ptrs, total_substrings);
+			return (NULL);
 		}
 		i += substring_len;
 	}
