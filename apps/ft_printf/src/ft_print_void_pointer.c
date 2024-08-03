@@ -6,11 +6,13 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 16:54:50 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/15 19:12:26 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 15:27:09 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include <stddef.h>
+#include "libft/libft.h"
+#include "libft/ft_printf.h"
 
 static size_t	ft_print_pointer_prefix(void)
 {

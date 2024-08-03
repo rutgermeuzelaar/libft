@@ -6,11 +6,13 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 16:51:34 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/15 19:12:34 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 15:23:15 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include <stddef.h>
+#include "libft/libft.h"
+#include "libft/ft_printf.h"
 
 size_t	ft_print_hexadecimal_upper(unsigned int number)
 {

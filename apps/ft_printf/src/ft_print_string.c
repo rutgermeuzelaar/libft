@@ -6,11 +6,11 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/09 14:54:38 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/15 19:12:30 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 15:25:33 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "libft/libft.h"
 
 int	ft_print_string(char *string)
 {

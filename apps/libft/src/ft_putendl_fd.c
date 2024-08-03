@@ -6,11 +6,13 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/01 20:44:26 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/16 20:43:49 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 16:06:45 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/libft.h"
+#include <stddef.h>
+#include <unistd.h>
+#include "libft/libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {

@@ -6,11 +6,13 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/23 14:57:10 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/15 20:26:24 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 15:32:53 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/get_next_line.h"
+#include <stddef.h>
+#include <stdlib.h>
+#include "libft/libft.h"
 
 size_t	null_or_strlen(const char *s)
 {

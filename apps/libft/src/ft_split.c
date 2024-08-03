@@ -6,11 +6,13 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/27 15:14:15 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/20 17:49:12 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 16:17:57 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/libft.h"
+#include <stddef.h>
+#include <stdlib.h>
+#include "libft/libft.h"
 
 static int	get_substring_len(char *s, char delimiter, size_t index)
 {

@@ -6,11 +6,12 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/25 11:46:17 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/16 20:44:37 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 16:15:26 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/libft.h"
+#include <stddef.h>
+#include "libft/libft.h"
 
 static int	in_set(char const *set, char c)
 {

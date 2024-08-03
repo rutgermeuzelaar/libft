@@ -6,11 +6,13 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/23 13:09:45 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/15 20:27:05 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 15:31:43 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/get_next_line_bonus.h"
+#include <stdlib.h>
+#include "libft/get_next_line.h"
+#include "libft/get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {

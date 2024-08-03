@@ -6,11 +6,13 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/09 15:53:22 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/15 19:12:23 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 15:40:19 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include <stddef.h>
+#include "libft/libft.h"
+#include "libft/ft_printf.h"
 
 size_t	ft_ultoa_base(size_t number, char *base_characters, \
 size_t base_len, size_t number_length)

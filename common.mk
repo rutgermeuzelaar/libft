@@ -1,5 +1,7 @@
 CC := cc
-CFLAGS := -Wall -Wextra -Werror -g -c -o
+INC_DIRS := ../../include
+INC := $(foreach dir, $(INC_DIRS), -I$(dir))
+CFLAGS := -Wall -Wextra -Werror $(INC) -g -c -o
 SRCDIR := src
 OBJDIR := build
 OBJECTS_STANDARD := $(SOURCES_STANDARD:%.c=$(OBJDIR)/%.o)

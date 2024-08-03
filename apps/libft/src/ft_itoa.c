@@ -6,11 +6,12 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/30 20:25:56 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/16 20:43:04 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 15:53:55 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/libft.h"
+#include <stddef.h>
+#include "libft/libft.h"
 
 static int	get_arr_len(int n)
 {

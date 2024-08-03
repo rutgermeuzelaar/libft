@@ -6,11 +6,12 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/10 09:46:05 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/16 20:42:47 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 15:49:43 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/libft.h"
+#include <stdlib.h>
+#include "libft/libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

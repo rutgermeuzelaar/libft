@@ -6,11 +6,13 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/10 09:47:14 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/16 20:44:10 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 16:11:41 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/libft.h"
+#include <stdlib.h>
+#include <stddef.h>
+#include "libft/libft.h"
 
 char	*ft_strdup(const char *s)
 {

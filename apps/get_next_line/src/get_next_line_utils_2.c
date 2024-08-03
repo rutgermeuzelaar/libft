@@ -6,11 +6,14 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/06/15 20:05:17 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/15 20:56:39 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 15:38:38 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/get_next_line.h"
+#include <unistd.h>
+#include <stdlib.h>
+#include "libft/libft.h"
+#include "libft/get_next_line.h"
 
 int	set_buffer(char **buffer, int fd)
 {

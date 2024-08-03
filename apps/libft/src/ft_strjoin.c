@@ -6,11 +6,13 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/10/25 11:29:38 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/06/16 20:42:35 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 16:12:24 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/libft.h"
+#include <stdlib.h>
+#include <stddef.h>
+#include "libft/libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
