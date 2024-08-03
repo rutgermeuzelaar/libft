@@ -6,12 +6,11 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/26 14:54:29 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/08/03 16:39:29 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/03 23:42:57 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "libft/trie.h"
 
 void	insert_next(t_trie *dest, t_trie *node)
@@ -19,7 +18,7 @@ void	insert_next(t_trie *dest, t_trie *node)
 	dest->next = node;	
 }
 
-t_trie	*new_node(char symbol)
+t_trie	*new_trie_node(char symbol)
 {
 	t_trie *node;
 
@@ -36,14 +35,18 @@ t_trie	*new_node(char symbol)
 
 // app apple
 
-t_trie	*traverse_childs(t_trie *root, char *string)
+t_trie	*traverse_childs(t_trie *root, char symbol)
 {
 	t_trie	*current;
 
 	current = root;
+	if (root == NULL)
+	{
+		return (NULL);
+	}
 	while (current->child != NULL)
 	{
-		if (current->c == *string)
+		if (current->c == symbol)
 		{	
 			return (current);
 		}
@@ -52,12 +55,29 @@ t_trie	*traverse_childs(t_trie *root, char *string)
 	return (NULL);	
 }
 
+t_trie *insert_substring(t_trie *root, char *string)
+{
+	t_trie	*node;
+
+	node = root;
+	node->child = new_trie_node(*string);
+	node = node->child;
+	string++;
+	while (string && *string != '\0')
+	{
+		node->next = new_trie_node(*string);
+		node = node->next;
+		string++;
+	}
+	return (root);
+}
+
 t_trie	*new_trie(char *string)
 {
 	t_trie	*root;
 	t_trie	*node;
 
-	root = new_node(*string);
+	root = new_trie_node(*string);
 	if (root == NULL)
 	{
 		return (NULL);
@@ -66,11 +86,32 @@ t_trie	*new_trie(char *string)
 	string++;
 	while (*string != '\0')
 	{
-		insert_next(node, new_node(*string));
+		insert_next(node, new_trie_node(*string));
 		node = node->next;
 		string++;
 	}
 	return (root);
+}
+
+t_trie	*insert_child(t_trie *parent, const char symbol)
+{
+	t_trie	*x_ptr;
+
+	x_ptr = parent;
+	if (parent == NULL)
+	{
+		return (NULL);
+	}
+	while (x_ptr->child != NULL)
+	{
+		x_ptr = x_ptr->child;
+	}
+	x_ptr->child = new_trie_node(symbol);
+	if (x_ptr->child == NULL)
+	{
+		return (NULL);
+	}
+	return (x_ptr->child);	
 }
 
 t_trie	*insert_string(t_trie *root, char *string)
@@ -79,59 +120,30 @@ t_trie	*insert_string(t_trie *root, char *string)
 	t_trie	*x_ptr;
 
 	y_ptr = root;
+	x_ptr = NULL;
 	if (root == NULL)
 	{
 		return (new_trie(string));
 	}
 	while (*string != '\0')
 	{
-		x_ptr = traverse_childs(y_ptr, string);
 		if (y_ptr->c == *string)
 		{
-			string++;
-			if (*string == '\0')
-			{
-				break ;
-			}
-			if (y_ptr->next->c == *string)
-			{
+			if (y_ptr->next)
 				y_ptr = y_ptr->next;
-			}
 		}
-		else if (x_ptr != NULL)
+		if (y_ptr->next == NULL)
 		{
-			string++;
-			y_ptr = x_ptr;		
-		}
-		else
-		{
-			if (y_ptr->next == NULL)
-			{
-				y_ptr->next = new_node(*string);
-				y_ptr = y_ptr->next;
-			}
+			x_ptr = traverse_childs(y_ptr, *string);
+			if (x_ptr)
+				y_ptr = x_ptr;
 			else
 			{
-				while (y_ptr->child != NULL)
-				{
-					y_ptr = y_ptr->child;
-				}
-				y_ptr->child = new_node(*string);
-				y_ptr = y_ptr->child;				
+				insert_substring(y_ptr, string);
+				break ;
 			}
-			string++;
-		}	
+		}
+		string++;
 	}
 	return (root);
-}
-
-int	main(void)
-{
-	t_trie *root = new_trie("baby");
-	printf("%c\n", root->c);
-	printf("%c\n", root->next->next->c);
-	insert_string(root, "bank");
-	printf("%c\n", root->next->c);
-	printf("%c\n", root->next->child->c);
-	return (0);
 }
