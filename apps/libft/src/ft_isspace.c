@@ -6,11 +6,12 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/05 15:23:44 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/08/05 16:40:34 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/05 19:15:14 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isspace(int c)
 {
-	return (c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v');
+	return (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t' || \
+	c == '\v');
 }
