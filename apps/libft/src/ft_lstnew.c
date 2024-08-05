@@ -6,11 +6,12 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/31 12:45:40 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/08/03 16:02:16 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/08/05 13:34:53 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include <stdlib.h>
 #include "libft/linked_list.h"
 
 t_list	*ft_lstnew(void *content)
