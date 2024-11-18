@@ -36,3 +36,5 @@ $(NAME): $(OBJECTS_STANDARD) $(OBJECTS_SHARED)
 
 clean:
 	rm -rf $(OBJECTS_STANDARD) $(OBJECTS_SHARED) $(OBJECTS_BONUS)
+
+re: clean all
