@@ -6,7 +6,7 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/05 14:46:29 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/08/05 14:47:43 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/11/18 13:41:04 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_trie	*add_child(t_trie *parent, char symbol)
 	if (parent->children == NULL)
 	{
 		parent->children = list_node;
-		return (parent->children->content);		
+		return (parent->children->content);
 	}
 	ft_lstadd_back(&parent->children, list_node);
 	return (list_node->content);

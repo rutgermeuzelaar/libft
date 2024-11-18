@@ -6,7 +6,7 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/05 14:50:47 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/08/05 14:51:09 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/11/18 13:39:28 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 t_trie	*new_trie(void)
 {
 	t_trie	*root;
-	
+
 	root = new_trie_node('\0');
 	if (root == NULL)
 	{

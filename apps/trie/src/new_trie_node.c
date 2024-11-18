@@ -6,7 +6,7 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/05 14:49:24 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/08/05 14:50:18 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/11/18 13:42:17 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 t_trie	*new_trie_node(char symbol)
 {
-	t_trie *node;
+	t_trie	*node;
 
-	node = malloc(sizeof *node);
+	node = malloc(sizeof(t_trie));
 	if (node == NULL)
 	{
 		return (NULL);
@@ -27,4 +27,3 @@ t_trie	*new_trie_node(char symbol)
 	node->complete = false;
 	return (node);
 }
-

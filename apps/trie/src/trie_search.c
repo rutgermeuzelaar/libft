@@ -6,7 +6,7 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/05 14:54:02 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/08/05 14:54:24 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/11/18 13:40:47 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 bool	trie_search(t_trie *root, char *string)
 {
-	t_trie *current;
-	t_trie *child;
+	t_trie	*current;
+	t_trie	*child;
 
 	current = root;
 	while (*string != '\0')

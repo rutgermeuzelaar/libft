@@ -6,7 +6,7 @@
 /*   By: rmeuzela <rmeuzela@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/08/05 14:51:37 by rmeuzela      #+#    #+#                 */
-/*   Updated: 2024/08/05 14:51:55 by rmeuzela      ########   odam.nl         */
+/*   Updated: 2024/11/18 13:40:17 by rmeuzela      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ t_trie	*in_children(t_trie *parent, char symbol)
 	}
 	return (NULL);
 }
-
