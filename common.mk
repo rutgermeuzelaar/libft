@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 CC := cc
 INC_DIRS := ../../include
 INC := $(foreach dir, $(INC_DIRS), -I$(dir))
@@ -14,25 +15,27 @@ NAME := ../../libft.a
 
 all: $(NAME)
 
-bonus: $(NAME) $(OBJECTS_BONUS)
-ifeq ($(SHARED_DEFINITION), true)
-ifeq ($(shell ../../entry_in_archive.sh $(notdir $(OBJECTS_STANDARD))), 1)
-	ar -d $(NAME) $(OBJECTS_STANDARD)
-endif
-endif
+$(NAME)(%.o): %.o
+	ar -csrU $(NAME) $<
 
-$(OBJECTS_BONUS): $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
-	$(CC) $(CFLAGS) $@ $<
-	ar -rs $(NAME) $@
+$(NAME): $(NAME)($(OBJECTS_STANDARD) $(OBJECTS_SHARED))
+	ar -s $(NAME)
 
 $(OBJDIR):
 	mkdir $(OBJDIR)
 
-$(OBJECTS_STANDARD) $(OBJECTS_SHARED): $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
+$(OBJECTS_STANDARD) $(OBJECTS_SHARED) $(OBJECTS_BONUS): \
+$(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) $@ $<
 
-$(NAME): $(OBJECTS_STANDARD) $(OBJECTS_SHARED)
-	ar -rcs $(NAME) $(OBJECTS_STANDARD) $(OBJECTS_SHARED)
+bonus: $(NAME)($(OBJECTS_BONUS)) remove-standard
+
+remove-standard:
+	@for stdobj in $(OBJECTS_STANDARD); do \
+		if ar -t $(NAME) | grep -q "$$(basename $$stdobj)"; then \
+			ar -d $(NAME) $$stdobj; \
+		fi; \
+	done
 
 clean:
 	rm -rf $(OBJECTS_STANDARD) $(OBJECTS_SHARED) $(OBJECTS_BONUS)
